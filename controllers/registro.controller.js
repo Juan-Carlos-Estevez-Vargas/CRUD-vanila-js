@@ -8,8 +8,6 @@ formulario.addEventListener("submit", (evento) => {
   const email = document.querySelector("[data-email]").value;
   clientServices
     .crearCliente(nombre, email)
-    .then(
-      (response) => (window.location.href = "/screens/registro_completado.html")
-    )
+    .then(() => (window.location.href = "/screens/registro_completado.html"))
     .catch((error) => console.log(error));
 });
