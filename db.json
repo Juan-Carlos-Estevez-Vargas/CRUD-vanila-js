@@ -1,3 +1,9 @@
 {
-  "perfil": []
+  "perfil": [
+    {
+      "nombre": "Juan Carlos Estevez",
+      "email": "juank@example.com",
+      "id": "c9cf803c-d4ef-4aac-a191-0c81f09ac82d"
+    }
+  ]
 }
