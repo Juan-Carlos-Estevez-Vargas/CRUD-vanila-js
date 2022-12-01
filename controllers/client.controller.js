@@ -1,5 +1,14 @@
 import { clientServices } from "../service/client-service.js";
 
+/**
+ * Crea una nueva línea en la tabla HTML mostrando los datos del cliente.
+ *
+ * @author Juan Carlos Estevez Vargas
+ * @param {String} nombre
+ * @param {String} email
+ * @param {uuid} id
+ * @returns línea con los datos del cliente.
+ */
 const crearNuevaLinea = (nombre, email, id) => {
   const linea = document.createElement("tr");
   const contenido = `
@@ -29,6 +38,9 @@ const crearNuevaLinea = (nombre, email, id) => {
 
   const btn = linea.querySelector("button");
 
+  /**
+   * Al hacer click sobre el botón eliminar se elimina el cliente.
+   */
   btn.addEventListener("click", () => {
     const id = btn.id;
     clientServices
@@ -42,6 +54,9 @@ const crearNuevaLinea = (nombre, email, id) => {
 
 const table = document.querySelector("[data-table]");
 
+/**
+ * Lista los clientes existentes en el sistema.
+ */
 clientServices
   .listaClientes()
   .then((data) => {
@@ -50,4 +65,4 @@ clientServices
       table.appendChild(nuevaLinea);
     });
   })
-  .catch((error) => alert("Ocurrió un error"));
+  .catch(() => alert("Ocurrió un error"));
